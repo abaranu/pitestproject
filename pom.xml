@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>pitestproject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <description>Project used for implementation of pitest with spock</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!--        replacing spring framework parent       -->
+        <java.version>11</java.version>
+        <resource.delimiter>@</resource.delimiter>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--        common dependencies version-->
+        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+        <jackson-annotation.version>2.11.1</jackson-annotation.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <tomcat-embed-core.version>9.0.35</tomcat-embed-core.version>
+        <spring-framework.version>5.2.5.RELEASE</spring-framework.version>
+        <org.apache.commons.commons-io.version>1.3.2</org.apache.commons.commons-io.version>
+        <!-- SPOCK / GROOVY / PITEST -->
+        <spock-core.version>2.0-M1-groovy-2.5</spock-core.version>
+        <gmavenplus-plugin.version>1.9.1</gmavenplus-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <junit.version>5.6.2</junit.version>
+        <groovy.version>2.5.13</groovy.version>
+        <pitest-maven.version>1.5.0</pitest-maven.version>
+        <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
+    </properties>
+
+    <modules>
+        <module>amodule</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>amodule</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+    <repositories>
+        <repository>
+            <id>rte-nexus-central</id>
+            <url>https://devin-depot.rte-france.com/repository/maven-central/</url>
+        </repository>
+        <repository>
+            <id>rte-nexus-public</id>
+            <url>https://devin-depot.rte-france.com/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>rte-nexus-third-party</id>
+            <url>https://devin-depot.rte-france.com/repository/third-party/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>rte-nexus-central</id>
+            <url>https://devin-depot.rte-france.com/repository/maven-central/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>rte-nexus-third-party</id>
+            <url>https://devin-depot.rte-france.com/repository/third-party/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    -->
+</project>
